@@ -56,6 +56,7 @@ export default function JobsPage() {
             {...cardData}
             onClick={onClick}
             activeId={activeId}
+            key={cardData["id"]}
           ></JobCard>
         ))}
       </div>

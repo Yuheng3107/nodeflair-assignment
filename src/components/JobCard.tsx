@@ -77,7 +77,9 @@ export default function JobCard({
       </div>
       <div className="border-t-2 mx-4 flex gap-0.5">
         {skills.map((skill) => (
-          <Button className="bg-[#F1F1F1] text-[#838383] my-1">{skill}</Button>
+          <Button className="bg-[#F1F1F1] text-[#838383] my-1" key={skill}>
+            {skill}
+          </Button>
         ))}
       </div>
     </div>
