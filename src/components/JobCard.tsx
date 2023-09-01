@@ -10,6 +10,9 @@ export default function JobCard({
   roleType,
   skills,
   salaryRange,
+  id,
+  onClick,
+  activeId,
 }: {
   imageURL: string;
   organisation: string;
@@ -20,9 +23,17 @@ export default function JobCard({
   roleType: string;
   skills: string[];
   salaryRange: string;
+  id: number;
+  activeId: number;
+  onClick: any;
 }) {
   return (
-    <div className="w-[97%] bg-white h-50 m-1 rounded-md  shadow-[0_0_2px_rgba(0,0,0,0.25)] flex flex-col p-1">
+    <div
+      className={`w-[97%] bg-white h-50 m-1 rounded-md  shadow-[0_0_2px_rgba(0,0,0,0.25)] flex flex-col p-1 ${
+        id === activeId && "border-2 border-[#1fc76a]"
+      }`}
+      onClick={() => onClick(id)}
+    >
       <div className="grid grid-cols-10 h-4/5 mt-2 py-2 mx-2">
         <div id="logo" className="col-span-2 ">
           <img src={imageURL} alt={organisation} />
@@ -53,7 +64,7 @@ export default function JobCard({
               <p id="salary" className="text-xs font-medium">
                 {salaryRange}
               </p>
-              <Button className="bg-[#F1F1F1] font-normal">EST</Button>
+              <Button className="bg-[#F1F1F1] font-normal text-xs">EST</Button>
             </div>
           )}
         </div>
