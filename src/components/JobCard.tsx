@@ -35,7 +35,7 @@ export default function JobCard({
       onClick={() => onClick(id)}
     >
       <div className="grid grid-cols-10 h-4/5 mt-2 py-2 mx-2">
-        <div id="logo" className="col-span-2 ">
+        <div id="logo" className="col-span-2 m-2">
           <img src={imageURL} alt={organisation} />
         </div>
         <div
